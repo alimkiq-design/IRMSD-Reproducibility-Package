@@ -1,0 +1,36 @@
+{
+  "input_file": "data/simulated/simulated_sprint_pilot_telemetry.csv",
+  "status": "SIMULATED DATA — NOT OBSERVED FIELD DATA",
+  "rows": 72,
+  "teams": 12,
+  "groups": {
+    "G1_Control": 6,
+    "G2_IRMSD": 6
+  },
+  "sprints_per_team": 6,
+  "missing_cells": 0,
+  "duplicate_team_sprint_rows": 0,
+  "identified_risks_le_reference_risks": true,
+  "zero_denominators": {
+    "planned_sp": 0,
+    "reference_risks": 0,
+    "total_defects": 0,
+    "dev_total_hours": 0
+  },
+  "statistical_unit": {
+    "mixed_effects_model": "Sprint-level rows with team random intercept",
+    "mann_whitney_u": "One six-sprint mean per team; n=6 teams per group",
+    "cohens_d": "One six-sprint mean per team; n=6 teams per group"
+  },
+  "mixed_effects_model_diagnostics": {
+    "failed_metrics": ["RDR", "MLT", "DER", "RWE", "RAO"],
+    "schedule_variance": "converged_with_warnings",
+    "warnings": [
+      "Random effects covariance is singular",
+      "MLE may be on the boundary of the parameter space",
+      "Hessian matrix is not positive definite"
+    ]
+  },
+  "reproducibility_note": "Re-run sprint_pilot/scripts/analyze_sprint_pilot.py using the committed synthetic input to regenerate the analysis output. Exact software environment is specified in sprint_pilot/requirements.txt.",
+  "limitation": "All input values are synthetic. None can be reported as real-team pilot observations, causal evidence, or field validation."
+}
