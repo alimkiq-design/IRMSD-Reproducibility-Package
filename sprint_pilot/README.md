@@ -1,0 +1,1 @@
+Add the verified telemetry generator, analysis script, data dictionary, and execution logs here. Keep synthetic and field datasets separate; report model convergence warnings and analysis limitations.
