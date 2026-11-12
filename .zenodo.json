@@ -19,7 +19,7 @@
     "reproducibility",
     "synthetic data"
   ],
-  "notes": "Author names and order supplied by the authors. Affiliations, ORCID identifiers, copyright ownership, software license, and dataset redistribution permissions must be confirmed before publication. The GitHub repository contains prototype source and tests, sprint-pilot scripts, and synthetic-only data/results. The benchmark and field-study materials remain incomplete. No Zenodo record or DOI has been created.",
+  "notes": "Authors and their order were supplied by the authors. Affiliations, ORCID identifiers, copyright ownership, software license, and dataset redistribution permissions must be confirmed before a future release. The current Zenodo archive has a version-specific DOI for v0.1.0 (10.5281/zenodo.24155679) and a Concept DOI for all versions (10.5281/zenodo.24155678). This package contains prototype source and tests, sprint-pilot scripts, and synthetic-only data/results; the expert-adjudicated benchmark and real-team field-study materials are not included.",
   "related_identifiers": [
     {
       "identifier": "https://github.com/alimkiq-design/IRMSD-Reproducibility-Package",
