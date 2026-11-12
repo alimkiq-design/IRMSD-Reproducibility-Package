@@ -1,11 +1,13 @@
 {
-  "title": "IRMSD: Integrated Risk Management for Software Development — Replication Package",
+  "title": "IRMSD: Integrated Risk Management for Software Development — Reproducibility Package",
   "upload_type": "software",
-  "description": "Initial reproducibility release for the IRMSD framework. The GitHub repository contains a prototype backend and automated regression tests, sprint telemetry template and analysis scripts, documentation, and a clearly labelled 72-row synthetic sprint dataset with diagnostic outputs. The synthetic observations are pipeline-check materials and not field-trial evidence. The expert-adjudicated benchmark, comparative classifier evaluation, and real-team field-study materials are not included in this release.",
+  "description": "Reproducibility release accompanying the IRMSD conceptual framework manuscript. The repository includes a prototype backend and automated regression tests, sprint telemetry template and analysis scripts, documentation, and a clearly labelled 72-row synthetic sprint dataset with diagnostic outputs. The synthetic observations are pipeline-check materials and are not field-trial evidence. The expert-adjudicated benchmark, comparative classifier evaluation, and real-team field-study materials are not included in this release.",
   "creators": [
     {
-      "name": "AUTHOR NAME — TO BE CONFIRMED",
-      "affiliation": "AFFILIATION — TO BE CONFIRMED"
+      "name": "Ali H. Obaid"
+    },
+    {
+      "name": "Khansaa A.O. Al-Husseini"
     }
   ],
   "keywords": [
@@ -17,5 +19,12 @@
     "reproducibility",
     "synthetic data"
   ],
-  "notes": "Provisional metadata. Confirm all creators, author order, affiliations, ORCID identifiers, copyright ownership, software license, and dataset redistribution permissions before releasing through Zenodo. This GitHub repository is populated with an initial technical scaffold, prototype source and tests, sprint-pilot scripts, and synthetic-only data/results. The benchmark and field-study materials remain incomplete. No Zenodo record or DOI has been created."
+  "notes": "Author names and order supplied by the authors. Affiliations, ORCID identifiers, copyright ownership, software license, and dataset redistribution permissions must be confirmed before publication. The GitHub repository contains prototype source and tests, sprint-pilot scripts, and synthetic-only data/results. The benchmark and field-study materials remain incomplete. No Zenodo record or DOI has been created.",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/alimkiq-design/IRMSD-Reproducibility-Package",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
 }
