@@ -5,6 +5,7 @@ type: software
 authors:
   - family-names: "Obaid"
     given-names: "Ali H."
+    orcid: "https://orcid.org/0000-0002-8427-1603"
   - family-names: "Al-Husseini"
     given-names: "Khansaa A.O."
 version: 0.1.0
