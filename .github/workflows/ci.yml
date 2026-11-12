@@ -1,0 +1,42 @@
+name: IRMSD reproducibility checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  prototype-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install prototype dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r prototype/requirements.txt
+      - name: Run prototype regression tests
+        working-directory: prototype
+        run: python -m pytest -q
+
+  sprint-pilot-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install sprint-pilot dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r sprint_pilot/requirements.txt
+      - name: Run sprint-pilot unit tests
+        working-directory: sprint_pilot
+        run: python -m pytest -q
+      - name: Run synthetic pipeline demonstration
+        working-directory: sprint_pilot
+        run: |
+          python scripts/analyze_sprint_pilot.py             --input ../data/simulated/simulated_sprint_pilot_telemetry.csv             --out ../results/simulated/pilot_statistical_results_ci.csv
