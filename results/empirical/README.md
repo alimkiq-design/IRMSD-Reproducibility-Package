@@ -1,0 +1,1 @@
+No empirical field results are included in this initial release. Populate this directory only with verified real observations, documented study protocol, permissions, and reproducible analysis outputs.
