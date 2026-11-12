@@ -1,42 +1,39 @@
-# GitHub and Zenodo publication steps
+# GitHub and Zenodo publication workflow
 
-## Target repository
+## Repository
 
 - GitHub account: `alimkiq-design`
-- Repository: `IRMSD-Reproducibility-Package`
-- URL: https://github.com/alimkiq-design/IRMSD-Reproducibility-Package
-- Visibility: Public (confirm that all future uploaded material is cleared for public redistribution).
+- Repository: https://github.com/alimkiq-design/IRMSD-Reproducibility-Package
+- Default branch: `main`
+- Visibility: Public
 
-## Current GitHub state
+## Current archived release
 
-The repository has been created and initialized with documentation and metadata files. This is an initial scaffold, not a complete replication package. Code, data, pinned dependencies, and execution logs must be added and verified before an archival release is made.
+Release `v0.1.0` is listed on GitHub and its Zenodo DOI badge is visible in Zenodo's GitHub integration page.
 
-## Complete and verify the package before a DOI release
+- GitHub release: https://github.com/alimkiq-design/IRMSD-Reproducibility-Package/releases/tag/v0.1.0
+- Version-specific DOI (exact v0.1.0 snapshot): https://doi.org/10.5281/zenodo.24155679
+- Concept DOI (all versions): https://doi.org/10.5281/zenodo.24155678
 
-1. Add the exact prototype source code and tests used for the reported verification.
-2. Record runtime versions and pinned dependencies.
-3. Include the exact synthetic sprint input, generator or generation procedure, analysis scripts, and machine-readable output that reproduce the manuscript tables.
-4. Document benchmark data source, source identifiers/URLs, extraction dates, licenses, transformations, exclusions, and project-level split manifest.
-5. Include annotation instructions, independent annotator records, and adjudication procedures only after genuine expert annotation has been performed.
-6. Run the complete workflow from a clean environment and preserve logs, warnings, and checksums.
-7. Add field-study data only with appropriate permissions, consent, ethics approval where required, and de-identification.
-8. Confirm author order, institutional affiliation, ORCID identifiers, copyright ownership, software license, and dataset licenses.
+Zenodo creates one DOI for the exact version and a Concept DOI representing all versions. Use the version-specific DOI when citing this exact package release for reproducibility. Use the Concept DOI when referring to the software project as an evolving resource.
 
-## Connect GitHub to Zenodo
+## Important scope limitations of v0.1.0
 
-1. Sign in to https://zenodo.org/ using the account intended to manage the project record.
-2. Open Zenodo's GitHub integration/settings area and authorize access to the target repository.
-3. Enable `IRMSD-Reproducibility-Package` in Zenodo's repository list.
-4. Once the package is complete and tested, create a version tag and GitHub Release (for example `v1.0.0`).
-5. Confirm that Zenodo archived the release and minted a DOI. Do not invent or cite a DOI before it exists.
-6. Copy the version-specific DOI and add it to the manuscript's Data and Code Availability statement and the repository README.
+The release includes prototype source code and tests, sprint analysis scripts, documentation, and a 72-record synthetic sprint dataset. The synthetic records are pipeline-check materials only; they are not observations from real software teams.
 
-## Suggested manuscript statement (only after publication)
+The expert-adjudicated classification benchmark, comparative classifier benchmarks, and longitudinal real-team field data are not included. Five of six mixed-effects models failed with singular-matrix errors in the synthetic demonstration; the remaining schedule-variance model produced singularity/boundary/Hessian warnings. These results must not be represented as real-world effectiveness evidence.
 
-`The IRMSD replication package is available at https://github.com/alimkiq-design/IRMSD-Reproducibility-Package (version [VERSION]), archived on Zenodo at https://doi.org/[DOI]. The package distinguishes prototype verification materials and synthetic pipeline-check data from any expert-adjudicated benchmark or field-study data.`
+## Before creating a future release
 
-Replace `[VERSION]` and `[DOI]` only after the Zenodo record is live.
+1. Confirm all authors' full names, order, affiliations, and ORCID identifiers.
+2. Confirm copyright ownership and select an appropriate software license. Document dataset-specific licenses separately.
+3. Add only verified code, data, and execution logs. Preserve source provenance and checksums.
+4. Run the full test and reproduction workflow from a clean environment.
+5. Update `CITATION.cff`, `.zenodo.json`, and the README to match the new release contents.
+6. Create a new semantic version tag and GitHub Release.
+7. Verify that Zenodo archived the new version and assigned a new version-specific DOI. The Concept DOI should remain the project-wide identifier.
+8. Cite the new version-specific DOI in any manuscript referring to that exact release.
 
-## DOI status
+## Suggested manuscript Data and Code Availability statement
 
-No Zenodo record or DOI has been created yet.
+See `MANUSCRIPT_DATA_AVAILABILITY.md` for the wording associated with v0.1.0.
