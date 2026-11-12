@@ -1,20 +1,34 @@
 # IRMSD: Integrated Risk Management for Software Development
 
-**Reproducibility package — documentation scaffold (v0.1.0)**
+**Reproducibility package — initial technical scaffold (v0.1.0)**
 
 Repository: https://github.com/alimkiq-design/IRMSD-Reproducibility-Package
 
 ## Purpose
 
-This repository accompanies the manuscript *A Conceptual Framework for Integrating Risk Management Tasks into Software Development Workflows*. It documents the IRMSD framework and provides a structured home for prototype-verification code, benchmark workflows, sprint-analysis scripts, data documentation, and reproducibility records.
+This repository accompanies the manuscript *A Conceptual Framework for Integrating Risk Management Tasks into Software Development Workflows*. It documents the IRMSD framework and provides the prototype source code, deterministic risk-gating tests, sprint-analysis scripts, a synthetic demonstration dataset, and supporting metadata/documentation.
 
-## What this release is — and is not
+## Scope of the current release
 
-This is an **initial documentation scaffold**, not yet a complete replication package. It does not currently contain the complete source code, input datasets, dependency lock files, or execution logs necessary to reproduce every result in the manuscript.
+This release includes:
+- the four-layer IRMSD architecture summary and R1–R12 risk taxonomy;
+- a Python prototype implementing risk scoring, effort adjustment, workflow gating, and active-risk idempotency;
+- a PostgreSQL schema and automated prototype tests;
+- sprint telemetry template generation and a statistical analysis script;
+- a 72-row **synthetic** sprint dataset and its clearly labelled analysis output;
+- documentation and provisional GitHub/Zenodo metadata.
 
-The manuscript's current evaluation includes prototype-level technical verification and an illustrative workflow walkthrough. Sprint-level results are based on **synthetic data for 12 simulated teams across six sprints**. These outputs exercise the analysis pipeline; they are not observations from industrial teams and must not be interpreted as evidence of field effectiveness.
+It does **not** yet include the expert-adjudicated risk-classification benchmark, verified benchmark model-training scripts, real software-team observations, or a field-study protocol/results package. The `benchmark/` and `data/human_adjudicated/` directories are placeholders only.
 
-Independent expert annotation, fully provenance-documented benchmark construction, comparative model evaluation, and live/longitudinal team trials are future validation activities unless and until their source data, protocols, and execution evidence are added here.
+## Evidence boundary
+
+The sprint dataset contains 12 simulated teams across six sprints. It is included only to demonstrate data validation and analysis code paths. It is not field data and must not be described as empirical validation or evidence of industrial effectiveness.
+
+Prototype tests verify deterministic software behavior; they do not evaluate classifier precision/recall, calibration, risk prediction validity, mitigation effectiveness, or organizational impact. PostgreSQL concurrency behavior has not yet been integration-tested.
+
+In the current synthetic sprint analysis, five of six mixed-effects models fail with singular-matrix errors. The remaining schedule-variance fit emits singular covariance, boundary, and non-positive-definite Hessian warnings. Mann–Whitney U and Cohen's d use team-level means (six teams per group), not sprint rows as independent observations. These synthetic results are exploratory pipeline checks only and are not reliable confirmatory evidence.
+
+Independent expert annotation, benchmark comparisons, and real-team/longitudinal trials remain future validation work unless complete source data, study protocols, permissions, and execution evidence are added in a later release.
 
 ## Framework summary
 
@@ -26,36 +40,17 @@ For human-approved risks, probability (P) and impact (I) are rated on five-point
 
 `R = P × I` (range 1–25).
 
-The maximum active risk score for a task determines its workflow tier:
-
 | Tier | Score | Workflow state |
 |---|---:|---|
 | Low | 1–6 | Ready_for_Sprint |
 | Medium | 7–14 | In_Progress (Review Gate) |
 | High | 15–25 | Blocked_Spike |
 
-The manuscript also specifies the effort adjustment:
+Effort adjustment:
 
-`E_adj = E_init × (1 + alpha_cal × (R_max / 25))`
+`E_adj = E_init × (1 + alpha_cal × (R_max / 25))`, where `0 < alpha_cal <= 0.50`.
 
-where `0 < alpha_cal <= 0.50`.
-
-## Risk taxonomy
-
-- R1 — Requirement Ambiguity
-- R2 — Requirement Instability
-- R3 — Architectural Risk
-- R4 — External Dependency Risk
-- R5 — Security and Privacy Risk
-- R6 — Performance and Scalability
-- R7 — Data Integrity Risk
-- R8 — Integration Risk
-- R9 — Testing and Verifiability
-- R10 — Deployment and Recovery
-- R11 — Resource and Schedule
-- R12 — Regulatory and Compliance
-
-## Planned repository layout
+## Repository layout
 
 ```text
 .
@@ -64,39 +59,52 @@ where `0 < alpha_cal <= 0.50`.
 ├── .zenodo.json
 ├── LICENSE_STATUS.md
 ├── docs/
+├── prototype/
+│   ├── app/
+│   ├── sql/
+│   └── tests/
+├── sprint_pilot/
+│   ├── scripts/
+│   ├── templates/
+│   └── tests/
 ├── data/
 │   ├── simulated/
 │   └── human_adjudicated/
-├── prototype/
-├── benchmark/
-├── sprint_pilot/
+├── benchmark/              # placeholder; not yet populated
 └── results/
     ├── simulated/
-    └── empirical/
+    └── empirical/          # placeholder; no field results included
 ```
 
-Only add files after verifying their origin, license, completeness, and relationship to the manuscript. Keep simulated outputs separate from human-adjudicated or field-study evidence.
+## Quick start: prototype tests
 
-## Reproduction requirements before a full release
+From `prototype/`:
 
-1. Add the exact prototype source code and tests used for the reported verification.
-2. Record runtime versions and pinned dependencies.
-3. Include the exact synthetic sprint input, generator (if applicable), analysis scripts, and machine-readable output that reproduce the manuscript tables.
-4. Document the benchmark data source, source identifiers/URLs, extraction dates, licenses, transformations, exclusions, and project-level split manifest.
-5. Include annotation instructions, independent annotator records, and adjudication procedures only after genuine expert annotation has been performed.
-6. Run the complete workflow from a clean environment and preserve logs and checksums.
-7. Add field-study data only with appropriate permissions, consent, ethics approval where required, and de-identification.
+```bash
+python -m pip install -r requirements.txt
+python -m pytest -q
+```
 
-## Data, ethics, and licensing
+The source package's regression suite was run in the authoring environment and reported **10 passed**. Re-run locally and preserve the execution log before relying on that verification in a formal replication.
 
-Do not upload credentials, private repository content, personal information, confidential issue-tracker exports, or third-party datasets without redistribution permission. Document dataset licensing separately from software licensing.
+## Quick start: sprint analysis
 
-No software license is assigned in this initial scaffold. See [LICENSE_STATUS.md](LICENSE_STATUS.md). A license must not be added until copyright ownership and third-party license compatibility have been confirmed.
+From `sprint_pilot/`:
+
+```bash
+python -m pip install -r requirements.txt
+python -m pytest -q
+python scripts/analyze_sprint_pilot.py --input ../data/simulated/simulated_sprint_pilot_telemetry.csv --out ../results/simulated/pilot_statistical_results_simulated.csv
+```
+
+Expected model warnings/failures are documented in `results/simulated/data_quality_and_method_audit.json`. Synthetic data are not empirical observations.
+
+## Licensing, data, and ethics
+
+No software license has been assigned. See [LICENSE_STATUS.md](LICENSE_STATUS.md). Do not upload credentials, private repository content, personal information, confidential issue-tracker exports, or third-party datasets without redistribution permission. Dataset licensing and provenance must be documented separately from software licensing.
 
 ## Citation and DOI
 
-A provisional `CITATION.cff` and `.zenodo.json` are included for review. Confirm author order, affiliations, ORCID identifiers, release version, and metadata before creating a public release. A DOI does **not** exist yet. After the repository is linked to Zenodo and a GitHub Release is archived, update the manuscript with the version-specific DOI and the concept DOI as appropriate.
+A provisional `CITATION.cff` and `.zenodo.json` are provided. Author order, affiliations, ORCID identifiers, and license remain to be confirmed. The GitHub repository exists, but **no Zenodo record or DOI has been created**. Do not cite a DOI until Zenodo has archived a versioned GitHub release.
 
-## Contact
-
-Corresponding-author contact details: to be completed and approved by the authors.
+See [docs/GITHUB_ZENODO_SETUP.md](docs/GITHUB_ZENODO_SETUP.md) for the release workflow.
