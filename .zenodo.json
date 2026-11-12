@@ -1,0 +1,28 @@
+{
+  "title": "IRMSD: Integrated Risk Management for Software Development — Replication Package",
+  "upload_type": "software",
+  "description": "Initial documentation and metadata scaffold accompanying the manuscript 'A Conceptual Framework for Integrating Risk Management Tasks into Software Development Workflows'. The repository is intended to host the IRMSD prototype, benchmark and sprint-pilot analysis scripts, documentation, and machine-readable outputs. Synthetic sprint data, when added, are pipeline-check materials and not field-trial evidence. This initial scaffold is not a complete replication package.",
+  "creators": [
+    {
+      "name": "AUTHOR NAME — TO BE CONFIRMED",
+      "affiliation": "AFFILIATION — TO BE CONFIRMED"
+    }
+  ],
+  "keywords": [
+    "software engineering",
+    "software risk management",
+    "Agile workflows",
+    "natural language processing",
+    "empirical software engineering",
+    "research software",
+    "reproducibility"
+  ],
+  "notes": "Provisional metadata only. Confirm author names, author order, affiliations, ORCID identifiers, license, and final release contents before publishing. The GitHub repository exists but currently contains an initial documentation scaffold only. No Zenodo record or DOI has been created.",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/alimkiq-design/IRMSD-Reproducibility-Package",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
