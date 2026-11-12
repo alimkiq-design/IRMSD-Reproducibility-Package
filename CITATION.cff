@@ -1,23 +1,24 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it using the metadata below and the version-specific Zenodo DOI."
-title: "IRMSD: Integrated Risk Management for Software Development — Replication Package"
+message: "If you use this software, please cite the archived version using its Zenodo DOI."
+title: "IRMSD: Integrated Risk Management for Software Development — Reproducibility Package"
 type: software
 authors:
-  - family-names: "AUTHOR FAMILY NAME — TO BE CONFIRMED"
-    given-names: "AUTHOR GIVEN NAME — TO BE CONFIRMED"
-    affiliation: "AFFILIATION — TO BE CONFIRMED"
+  - family-names: "Obaid"
+    given-names: "Ali H."
+  - family-names: "Al-Husseini"
+    given-names: "Khansaa A.O."
 version: 0.1.0
 date-released: 2026-11-12
 abstract: >-
-  Documentation scaffold for the IRMSD framework, intended to host prototype
-  verification code, benchmark and sprint-pilot workflows, documentation, and
-  machine-readable outputs. This initial release explicitly distinguishes
-  synthetic pipeline-check data from future human-adjudicated benchmark data
-  and real-team observations.
+  Reproducibility package accompanying the IRMSD conceptual framework
+  manuscript. The current release includes prototype source code and
+  regression tests, sprint analysis scripts, documentation, and a clearly
+  labelled synthetic sprint dataset. The synthetic data are pipeline-check
+  materials, not observations from real software development teams.
 keywords:
   - software engineering
   - software risk management
   - Agile workflows
+  - research software
   - reproducibility
-license: "NOASSERTION"
 repository-code: "https://github.com/alimkiq-design/IRMSD-Reproducibility-Package"
