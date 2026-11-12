@@ -111,6 +111,13 @@ No software license has been assigned. See [LICENSE_STATUS.md](LICENSE_STATUS.md
 
 ## Citation and DOI
 
-A provisional `CITATION.cff` and `.zenodo.json` are provided. Author order, affiliations, ORCID identifiers, and license remain to be confirmed. The GitHub repository exists, but **no Zenodo record or DOI has been created**. Do not cite a DOI until Zenodo has archived a versioned GitHub release.
+The repository has been archived on Zenodo for release `v0.1.0`:
 
-See [docs/GITHUB_ZENODO_SETUP.md](docs/GITHUB_ZENODO_SETUP.md) for the release workflow.
+- **Version-specific DOI (v0.1.0):** [10.5281/zenodo.24155679](https://doi.org/10.5281/zenodo.24155679)
+- **Concept DOI (all versions):** [10.5281/zenodo.24155678](https://doi.org/10.5281/zenodo.24155678)
+
+Use the version-specific DOI when citing the exact v0.1.0 snapshot. Use the Concept DOI when referring to the evolving software project across versions. The Zenodo badge at the top of this README intentionally targets the Concept DOI.
+
+The author names and order in `CITATION.cff` were supplied by the authors. Affiliations, ORCID identifiers, and the software license still require confirmation before a future release. No expert-adjudicated benchmark or real-team field-study dataset is included in v0.1.0.
+
+See [docs/GITHUB_ZENODO_SETUP.md](docs/GITHUB_ZENODO_SETUP.md) for future versioning and archival instructions.
