@@ -1,8 +1,14 @@
 # IRMSD: Integrated Risk Management for Software Development
 
-**Reproducibility package — initial technical scaffold (v0.1.0)**
+[![DOI](https://zenodo.org/badge/1454958531.svg)](https://doi.org/10.5281/zenodo.24155678)
 
-Repository: https://github.com/alimkiq-design/IRMSD-Reproducibility-Package
+**Reproducibility package — release v0.1.0**
+
+- **Version-specific DOI (v0.1.0):** [10.5281/zenodo.24155679](https://doi.org/10.5281/zenodo.24155679)
+- **Concept DOI (all versions):** [10.5281/zenodo.24155678](https://doi.org/10.5281/zenodo.24155678)
+- **GitHub repository:** https://github.com/alimkiq-design/IRMSD-Reproducibility-Package
+
+The version-specific DOI identifies the archived v0.1.0 snapshot. The Concept DOI resolves to the overall software record and is intended for references to the project across versions.
 
 ## Purpose
 
