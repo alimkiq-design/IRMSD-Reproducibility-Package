@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite the archived version using its Zenodo DOI."
+message: "For reproducibility, cite the exact archived version using the version-specific DOI. Use the concept DOI when referring to the project across versions."
 title: "IRMSD: Integrated Risk Management for Software Development — Reproducibility Package"
 type: software
 authors:
@@ -21,4 +21,11 @@ keywords:
   - Agile workflows
   - research software
   - reproducibility
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24155679"
+    description: "Version-specific DOI for release v0.1.0"
+  - type: doi
+    value: "10.5281/zenodo.24155678"
+    description: "Concept DOI for all versions"
 repository-code: "https://github.com/alimkiq-design/IRMSD-Reproducibility-Package"
