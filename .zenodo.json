@@ -4,7 +4,8 @@
   "description": "Reproducibility release accompanying the IRMSD conceptual framework manuscript. The repository includes a prototype backend and automated regression tests, sprint telemetry template and analysis scripts, documentation, and a clearly labelled 72-row synthetic sprint dataset with diagnostic outputs. The synthetic observations are pipeline-check materials and are not field-trial evidence. The expert-adjudicated benchmark, comparative classifier evaluation, and real-team field-study materials are not included in this release.",
   "creators": [
     {
-      "name": "Ali H. Obaid"
+      "name": "Ali H. Obaid",
+      "orcid": "0000-0002-8427-1603"
     },
     {
       "name": "Khansaa A.O. Al-Husseini"
