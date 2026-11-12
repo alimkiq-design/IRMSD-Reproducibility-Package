@@ -1,0 +1,1 @@
+Place only clearly labelled synthetic datasets here. Include the generator or generation procedure, random seed where applicable, schema, and checksum. Synthetic records must not be presented as observations from real teams.
